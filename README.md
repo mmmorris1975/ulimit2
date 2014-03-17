@@ -4,6 +4,7 @@ A cookbook to set resource limits via ulimit.
 
 Requirements
 ------------
+
 Should support any linux platform, but has been tested successfully on:
 
   - rhel >= 5.0
@@ -13,31 +14,23 @@ Should support any linux platform, but has been tested successfully on:
 
 Attributes
 ----------
-#### ulimit::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['ulimit']['conf_dir']</tt></td>
-    <td>String</td>
-    <td>The directory to store the config file in</td>
-    <td><tt>/etc/security/limits.d</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['ulimit']['conf_file']</tt></td>
-    <td>String</td>
-    <td>The file containing the resource limits</td>
-    <td><tt>999-chef-ulimit.conf</tt></td>
-  </tr>
-</table>
+
+#### ulimit2::default
+
+*  **['ulimit']['conf\_dir']**  
+    _Type:_ String  
+    _Description:_ The directory to store the config file in  
+    _Default:_ /etc/security/limits.d
+
+*  **['ulimit']['conf\_file']**  
+    _Type:_ String  
+    _Description:_ The file containing the resource limits  
+    _Default:_ 999-chef-ulimit.conf
 
 Usage
 -----
-#### ulimit::default
+
+#### ulimit2::default
 Set attributes in the ulimit/params namespace to set resource limits.  Example values:
 
     node.set['ulimit']['params']['default']['nofile'] = 2000 # Set hard and soft open file limit to 2000 for all users
@@ -46,13 +39,13 @@ Set attributes in the ulimit/params namespace to set resource limits.  Example v
     node.set['ulimit']['params']['root']['nofile']['hard'] = 'unlimited' # Set the hard open file limit to unlimited for the 'root' user
     node.set['ulimit']['params']['@sysadmin']['nproc']['hard'] = 2500  # Set the hard process limit to 2500 for the 'sysadmin' group
 
-Then, just include `ulimit` in your node's `run_list`:
+Then, just include `ulimit2` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[ulimit]"
+    "recipe[ulimit2]"
   ]
 }
 ```
@@ -63,6 +56,6 @@ The default ulimit/conf\_file attribute value gives us a reasonable chance of be
 
 License and Authors
 -------------------
-Authors: Michael Morris
 
+Authors: Michael Morris  
 License: 3-clause BSD
