@@ -1,4 +1,4 @@
-ulimit Cookbook
+ulimit2 Cookbook
 ===============
 A cookbook to set resource limits via ulimit.
 

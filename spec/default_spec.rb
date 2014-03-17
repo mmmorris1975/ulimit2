@@ -20,7 +20,7 @@ platforms = [
 ]
 
 platforms.each { |i| i.each_pair do |p,v|
-  describe 'ulimit::default' do
+  describe 'ulimit2::default' do
     let (:chef_run) { ChefSpec::Runner.new(platform:p, version:v, :log_level => :info) do |node|
       Chef::Log.debug(sprintf("#### FILE: %s  PLATFORM: %s  VERSION: %s ####", ::File.basename(__FILE__), p, v))
 
