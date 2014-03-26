@@ -11,5 +11,5 @@ template ::File.join(node['ulimit']['conf_dir'], node['ulimit']['conf_file']) do
   owner 'root'
   group 'root'
   mode  '0644'
-  variables :limits => node['ulimit']['params']
+  variables limits: node['ulimit']['params']
 end
