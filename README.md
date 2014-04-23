@@ -9,8 +9,9 @@ Should support any linux platform, but has been tested successfully on:
 
   - rhel >= 5.0
   - centos >= 5.0
-  - ubuntu >= 12.04
   - fedora >= 17.0
+  - debian >= 6.0
+  - ubuntu >= 12.04
 
 Attributes
 ----------
