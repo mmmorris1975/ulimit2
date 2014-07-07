@@ -89,5 +89,5 @@ task :release, [:type] => [:clean, :test, 'kitchen:all'] do |_t, args|
 end
 
 task :upload => [:release] do
-  sh "bundle exec knife cookbook site share #{cb_name} 'Operations Systems & Virtualization' -c ~/.knife_opscode.rb"
+  sh "bundle exec knife cookbook site share #{cb_name} 'Operating Systems & Virtualization' -c ~/.knife_opscode.rb"
 end
