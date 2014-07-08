@@ -4,6 +4,7 @@ A cookbook to set resource limits via ulimit.
 
 Requirements
 ------------
+Ruby 1.9 or later
 
 Should support any linux platform, but has been tested successfully on:
 
