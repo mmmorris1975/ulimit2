@@ -48,7 +48,6 @@ task :test do
   if ::File.exist?(::File.join(cb_dir, 'Strainerfile'))
     sh 'bundle exec strainer test' if ::File.exist?(::File.join(cb_dir, 'Strainerfile'))
   else
-    Rake::Task[:knife_test].execute
     Rake::Task[:foodcritic].execute
     Rake::Task[:rubocop].execute
     Rake::Task[:chefspec].execute
@@ -69,10 +68,10 @@ task :release, [:type] => [:clean, :test, 'kitchen:all'] do |_t, args|
     ary = type.split(/\s+/)
 
     if ary.size != 2
-      print 'ERROR: manual release type requires a version (ex. manual 1.2.3)\n'
+      print "ERROR: manual release type requires a version (ex. manual 1.2.3)\n"
       exit 1
     elsif !ary[1].strip.match(/^\d+\.\d+\.\d+$/)
-      print 'ERROR: version format must be in the form of x.y.z\n'
+      print "ERROR: version format must be in the form of x.y.z\n"
       exit 1
     end
   elsif type.strip.match(/^\d+\.\d+\.\d+$/)
