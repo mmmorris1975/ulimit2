@@ -13,4 +13,4 @@ This file is used to list changes made in each version of the ulimit2 cookbook.
 
 0.2.0
 -----
-- [michael.m.morris@gmail.com] - Changes to enable Chef 12
+- [michael.m.morris@gmail.com] - Changes to enable Chef 12 (should still be Chef 11 compliant!)
